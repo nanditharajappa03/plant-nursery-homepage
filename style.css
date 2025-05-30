@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(40, 39, 39, 0.7), rgba(35, 35, 35, 0.7)), url(photorealistic.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+}
+
+.logo {
+    width: 50px;
+    cursor: pointer;
+}
+
+.nav {
+    width: 100px;
+    float: left;
+    height: 70px;
+    margin-left: 30px;
+}
+
+ul {
+    float: left;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    margin-left: 30px;
+    margin-top: 3px;
+    font-size: 10px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: 0.1s ease-in-out;
+}
+
+
+ul li:hover {
+    color: green;
+}
+
+
+/* .box {
+    max-width: 75px;
+    width: 80px;
+}
+
+.box .search-box {
+    position: relative;
+    height: 50px;
+    max-width: 50px;
+    margin: auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+#check:checked ~ .search-box{
+    max-width: 50px;
+}
+
+.search-box input{
+    position: absolute;
+    height: 70%;
+    max-width: 50px;
+    border-radius: 25px;
+    background: #fff;
+    outline: none;
+    border: none;
+    padding-right: 55px;
+    font-size: 16px;
+    top: 8px;
+}
+
+.search-box .icon{
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    width: 25px;
+    background:#fff;
+    height: 70%;
+    text-align: center;
+    line-height: 40px;
+    color: rgb(89, 136, 89);
+    font-size: 14px;
+    border-radius: 35px;
+}
+
+#check:checked ~ .search-box .icon{
+    background: rgb(89, 136, 89);
+    color: #fff;
+    width: 60px;
+    border-radius: 0 25px 25px 0;
+}
+
+#check
+    display: none;
+} */
+
+.box {
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+    padding: 17px 9px;
+    background: transparent;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(144, 142, 142, 0.3);
+}
+
+.box:hover input {
+    width: 100px;
+}
+
+.box input {
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent;
+    color: beige;
+    font-size: 12px;
+}
+
+.box a .fa-solid {
+    color: white;
+    font-size: 13px;
+}
+
+.content {
+    width: 120px;
+    color: beige;
+    position: relative;
+}
+
+.content p {
+    padding-left: 15px;
+    padding-bottom: 25px;
+    font-family: Impact;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+    position: relative;
+    animation: text 3s 1;
+}
+
+.content h1 {
+    font-family: georgia;
+    font-size: 30px;
+    padding-left: 15px;
+    margin-top: 60%;
+    letter-spacing: 2px;
+}
+
+.btnLogin-popup {
+    width: 50px;
+    height: 25px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.7em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+    justify-content: center;
+}
+
+
+.btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.wrapper {
+    position: relative;
+    width: 500px;
+    height: 320px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
+}
+.wrapper.active {
+    height: 400px;
+}
+
+.wrapper .form-box {
+    width: 50%;
+    padding: 4px;
+}
+
+
+.wrapper.active .form-box .login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper.form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 35px;
+    background: rgb(1, 46, 1);
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.form-box h2 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 10px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: black;
+    line-height: 42px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: black;
+    font-weight: 500;
+    margin: 0 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: black;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 30px;
+    background: rgb(1, 46, 1);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
